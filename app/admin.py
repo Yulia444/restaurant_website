@@ -7,7 +7,7 @@ from flask_admin import BaseView, expose, Admin
 from app.forms import SendLetterToSubscribers
 from flask_ckeditor import CKEditor, CKEditorField
 from app import mail
-from flask_mail import Message, SubscribeForNews
+from flask_mail import Message
 
 class SendLetter(BaseView):
     @expose('/', methods=['GET', 'POST'])
