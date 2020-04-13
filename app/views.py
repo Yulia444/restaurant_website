@@ -30,7 +30,7 @@ def gallery():
 
 @app.route('/menu', methods=['GET', 'POST'])
 def menu():
-    form = SubscribeForNews()
+    form = Subscribe()
     if form.validate_on_submit():
         subscriber = SubscribeForNews(email=form.email.data)
         db.session.add(subscriber)
