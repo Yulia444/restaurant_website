@@ -7,7 +7,7 @@ from flask_admin import BaseView, expose, Admin
 from app.forms import SendLetterToSubscribers
 from flask_ckeditor import CKEditor, CKEditorField
 from app import mail
-from flask_mail import Message
+from flask_mail import Message, SubscribeForNews
 
 class SendLetter(BaseView):
     @expose('/', methods=['GET', 'POST'])
@@ -30,5 +30,6 @@ admin=Admin(app, template_mode='bootstrap3')
 admin.add_view(ModelView(Image, db.session))
 admin.add_view(ModelView(Dish, db.session))
 admin.add_view(ModelView(Review, db.session))
+admin.add_view(ModelView(SubscribeForNews, db.session))
 admin.add_view(SendLetter('Send letter', url='/sendletter'))
 admin.add_view(NewsEdit(News, db.session))
