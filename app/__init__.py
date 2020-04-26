@@ -4,8 +4,8 @@ from app.config import DevConfig, ProdConfig
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect
-from flask_ckeditor import CKEditor, CKEditorField
-from flask_mail import Mail, Message
+from flask_ckeditor import CKEditor
+from flask_mail import Mail
 
 
 app = Flask(__name__)
